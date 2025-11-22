@@ -48,22 +48,22 @@ with st.expander('Input features'):
   st.write('**Combined penguins data**')
   input_penguins
 
-# Data preparation
-# Encode X
-encode = ['island','sex']
-df_penguins = pd.get_dummies(input_penguins, prefix=encode)
-input_row = df_penguins[:1]
+  # Data preparation
+  # Encode X
+  encode = ['island','sex']
+  df_penguins = pd.get_dummies(input_penguins, prefix=encode)
+  input_row = df_penguins[:1]
   
-# Encode y
-target_mapper = {'Adelie':0,
-                'Chinstrap':1,
-                'Gentoo': 2}
-def target_encode(val):
-  return target_mapper[val]
+  # Encode y
+  target_mapper = {'Adelie':0,
+                  'Chinstrap':1,
+                  'Gentoo': 2}
+  def target_encode(val):
+    return target_mapper[val]
 
-y = y_raw.apply(target_encode)
-y
-y_raw
+  y = y_raw.apply(target_encode)
+  y
+  y_raw
 
 with st.expander('Data preparation'):
   st.write('**Encoded X (input penguin)**')
