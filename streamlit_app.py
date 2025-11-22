@@ -49,7 +49,7 @@ with st.expander('Input features'):
   input_penguins
   
 # Encode
-encode = ['island','gender']
+encode = ['island','sex']
 df_penguins = pg.get_dummies(input_penguins, prefix=encode)
 df_penguins
 
